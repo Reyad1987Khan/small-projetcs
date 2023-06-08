@@ -35,7 +35,7 @@
                 // Inser data to Table
                 $sql =  "INSERT INTO category (category_name, category_entry_date, category_entry_by)
                         VALUES ('$category_name ', '$category_entry_date', '$category_entry_by')";
-            if ($conn->query($sql) === TRUE) {
+            if ($conn->query($sql) == TRUE) {
                 echo 'Data Inserted!';
             }else {
               echo'Data not inserted!';
