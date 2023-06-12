@@ -3,7 +3,6 @@ require('php_connection_create.php');
 ?>
 
 <!DOCTYPE html>
-
 <html>
   <head>
       <title>Edit Category</title>
@@ -23,7 +22,7 @@ require('php_connection_create.php');
       }
       // Get all the data
       if(isset($_GET['category_name'])){
-        $new_category_name            = $_GET['category_name'];
+        $new_category_name            =$_GET['category_name'];
         $category_entry_date          =$_GET['category_entry_date'];
         $category_id                  =$_GET['category_id'];
 
