@@ -2,6 +2,17 @@
 <?php
 require('php_connection_create.php');
 
+$sql_q = "select * from category";
+$sql_query_q = $conn->query($sql_q);
+
+$data_list = array();
+while($sql_query_value_q = mysqli_fetch_assoc($sql_query_q)){
+$category_name = $sql_query_value_q['category_name'];
+$category_id = $sql_query_value_q['category_id'];
+
+$data_list[$category_id] = $category_name;
+}
+
 $sql = "select * from products";
 $sql_query = $conn->query($sql);
     echo "<table class='tab' id='tab'>
@@ -25,7 +36,7 @@ while($sql_query_value = mysqli_fetch_assoc($sql_query)){
         echo "<tr>
             <td>$product_id</td>
             <td>$product_name</td>
-            <td>$product_category</td>
+            <td>$data_list[$product_category]</td>
             <td>$product_code</td>
             <td>$product_entry_date</td>
             <td>$product_entry_by</td>

@@ -1,4 +1,3 @@
-<!-- This page created for experiment it has another page name as php_edit_product.php-->
 <?php
 require('php_connection_create.php');
 // echo $_SERVER['PHP_SELF'];
@@ -34,7 +33,7 @@ if(isset($_POST['product_name'])){
                    if($conn->query($sql_update) == TRUE){
                     echo 'Update successfull!';
                    }else {
-                    echo 'Update Denight';
+                    echo "Error Massage says that:" . $conn->error;
                    }
 }
 ?>
@@ -59,11 +58,25 @@ if(isset($_POST['product_name'])){
     <input type="text" name="product_name" id="product_name" value="<?php echo $product_name ?>"/><br><br>
 
     <label for="product_category">Product Category</label>
-    <input type="text" name="product_category" id="product_category" value="<?php echo $product_category ?>"><br><br>
+    <select name="product_category" id="product_category">
+        <?php 
+            $selt_qury = "select * from category";
+            $selt_qury_val =$conn->query($selt_qury);
+            while($selt_qury_value = mysqli_fetch_assoc($selt_qury_val)){
+                $category_id_list = $selt_qury_value['category_id'];
+                $category_name_list = $selt_qury_value['category_name'];
+        ?>
+                <option value='<?php echo $category_id_list ?>' <?php if($category_id_list == $product_category){
+                    echo 'selected';}?> >
+                <?php echo $category_name_list ?> 
+                </option>
+           <?php }
+            ?>
+    </select><br><br>
 
     <label for="product_entry_date">Product Entry Date</label>
-    <input type="text" name="product_entry_date" id="product_entry_date" value="<?php echo date('Y-m-d',strtotime($product_entry_date)) ?>"><br><br>
-
+    <input type="date" name="product_entry_date" id="product_entry_date" value="<?php echo date('Y-m-d',strtotime($product_entry_date)) ?>"><br><br>
+          
     <input type="submit" value="Update">
 
     </form>
