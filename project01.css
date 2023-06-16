@@ -8,4 +8,5 @@
 tr td{
     background-color: rgb(9, 146, 238);
     border: 1px solid rgb(0, 167, 0);
+    padding: 2px;
 }
