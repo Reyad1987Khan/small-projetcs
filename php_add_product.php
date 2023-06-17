@@ -32,7 +32,7 @@ if (isset($_POST['product_name'])){
       <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
           Products : <br>
           <label for="prod_name">Product Name:</label>
-          <input type="text" name="product_name"><br><br>
+          <input type="text" name="product_name"><br><br> 
           <label for="prod_cat_name">Product Category:</label>
               <select name="product_category">
                 <?php
