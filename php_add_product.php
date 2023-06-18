@@ -1,6 +1,6 @@
 <?php
 require('php_connection_create.php');
-$product_name =  $product_category =  $product_code =  $product_entry_date   =  '';
+$product_name =  $product_category =  $product_code =  $product_entry_date = '';
 if (isset($_POST['product_name'])){
   $product_name         =  $_POST['product_name'];
   $product_category     =  $_POST['product_category'];
@@ -14,7 +14,7 @@ if (isset($_POST['product_name'])){
   if ($conn->query($sql) == TRUE) {
       echo 'Data Inserted!';
   }else {
-    echo'Data not inserted!';
+    echo "Data not inserted!" . $conn->error;
   }
 }
 // Select statement for category List

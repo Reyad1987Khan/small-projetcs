@@ -32,7 +32,7 @@ require('php_connection_create.php');
                 if($conn->query($sql1) == TRUE){
                     echo 'Update Successfull!';
                 }else {
-                  echo 'No Update!';
+                  echo "Error shows" . $conn->error;
                 }
       }   
     ?>

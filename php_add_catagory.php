@@ -38,7 +38,7 @@
             if ($conn->query($sql) == TRUE) {
                 echo 'Data Inserted!';
             }else {
-              echo'Data not inserted!';
+              echo "Error shows" . $conn->error;
             }
           }
       ?>
