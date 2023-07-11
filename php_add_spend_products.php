@@ -43,7 +43,6 @@ if(isset($_POST['spend_product_name'])){
               <?php echo $prod_name ?>
               </option>
             <?php } ?>
-            https://codingstatus.com/how-to-insert-select-option-value-in-database-using-php-mysql/
             
             
         </select>
