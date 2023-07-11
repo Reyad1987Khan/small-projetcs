@@ -4,8 +4,8 @@ require('php_connection_create.php');
 require('php_all_functions.php');
 
 $store_prod_name = $store_prod_qty = $store_prod_entry_date = '';
-if (isset($_POST['store_prod_name'])){
-    $store_prod_name               = $_POST['store_prod_name'];
+if (isset($_POST['product_name'])){
+    $store_prod_name               = $_POST['product_name'];
     $store_prod_qty                = $_POST['store_prod_qty'];
     $store_prod_entry_date         = $_POST['store_prod_entry_date'];
 
@@ -15,8 +15,8 @@ if (isset($_POST['store_prod_name'])){
         echo 'Data Update Successfully';
     } else{ 
                 echo 'Insert Error shows:'.$conn->error;
-    }
-} 
+}
+}
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +40,7 @@ if (isset($_POST['store_prod_name'])){
 
         <label for="store_prod_entry_date">Entry Date:</label>
         <input type="date" name="store_prod_entry_date" id="store_prod_entry_date"><br><br>
-        <input type="submit" value="Submit">
+        <input type="submit" id="btn" value="Submit" onclick="return savedata();">
     </form>
 
 <script src="project01.js"></script>  

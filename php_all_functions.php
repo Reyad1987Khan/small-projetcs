@@ -10,4 +10,5 @@ function data_list($tablename, $column1, $column2){
                 echo "<option value='$data_id'>$data_name</option>";
             }
 }
+
 ?>
