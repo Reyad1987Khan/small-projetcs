@@ -39,23 +39,19 @@ if(isset($_POST['spend_product_name'])){
               $prod_id              = $name['product_id'];
               $prod_name            = $name['product_name'];
               ?>
-              <option value='<?php $prod_id ?>' <?php if( $spend_product_name  == $prod_id){ echo 'selected';}?>>
+              <option value="<?php echo $prod_id ?>" <?php if( $spend_product_name  == $prod_id){ echo 'selected';}?> >
               <?php echo $prod_name ?>
               </option>
-            <?php } ?>
-            
-            
-        </select>
-        <input type="text" id="spend_product_name" name="spend_product_name"><br><br>
-
+            <?php } ?>    
+        </select><br><br>
         <label for="spend_product_qty">Product Quentity:</label>
         <input type="number" id="spend_product_qty" name="spend_product_qty"><br><br>
 
         <label for="spend_product_date">Product Spend Date:</label>
         <input type="date" id="spend_product_date" name="spend_product_date"><br><br>
         <input type="submit" id="submit" value="Submit" onclick="return savedata();>
+        </form>
 
-    </form>
 <script src="project01.js"></script>  
 </body>
 </html>
