@@ -3,7 +3,7 @@ require('php_connection_create.php');
 // echo $_SERVER['PHP_SELF'];
 
 $product_id = $product_name = $product_category = $product_entry_date = '';
-if(isset($_GET['id'])){
+if(isset($_GET['id'])){ 
     $get_id = $_GET['id'];
     // for getting data
     $sql = ("select * from products where product_id = $get_id");
