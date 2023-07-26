@@ -6,9 +6,24 @@
     <title>Document</title>
 </head>
 <body>
-<p>Search the string "Hello World!", find the value "world" and replace it with "Peter":</p>
-    <?php
-    echo str_replace("world","Peter","Hello world!");
+<?php
+$myColor = "Green";
+    switch($myColor) {
+        case "Green";
+        echo "Her favourite color is :".$myColor;
+        break;
+
+        case "Yellow";
+        echo "His favourite color is :".$myColor;
+        break;
+
+        case "White";
+        echo "Ontora favourite color is :".$myColor;
+        break;
+
+        default:
+        echo "Your favorite color is neither red, blue, nor green!";
+    }
     ?>
 </body>
 </html>
